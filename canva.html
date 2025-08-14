@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Directory - API Data Fetch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="canva.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">User Directory</h1>
+        </div>
+        
+        <!-- Controls -->
+        <div class="text-center mb-8">
+            <button id="reloadBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                <span id="reloadText">🔄 Reload Data</span>
+            </button>
+        </div>
+        
+        <!-- Loading State -->
+        <div id="loadingState" class="text-center py-12 hidden">
+            <div class="loading-spinner mx-auto mb-4"></div>
+            <p class="text-gray-600 text-lg">Fetching user data...</p>
+        </div>
+        
+        <!-- Error State -->
+        <div id="errorState" class="hidden">
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+                <div class="text-red-500 text-5xl mb-4">⚠️</div>
+                <h3 class="text-xl font-semibold text-red-800 mb-2">Oops! Something went wrong</h3>
+                <p id="errorMessage" class="text-red-600 mb-4"></p>
+                <p class="text-sm text-red-500">Try checking your internet connection or click reload to try again.</p>
+            </div>
+        </div>
+        
+        <!-- Users Container -->
+        <div id="usersContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- User cards will be inserted here -->
+        </div>
+        
+        <!-- Stats -->
+        <div id="statsContainer" class="hidden mt-8 text-center">
+            <div class="bg-white rounded-lg shadow-md p-4 inline-block">
+                <span class="text-gray-600">Total Users Loaded: </span>
+                <span id="userCount" class="font-bold text-blue-600">0</span>
+            </div>
+        </div>
+    </div>
+    <script src="canva.js"></script>
+</body>
+</html>
